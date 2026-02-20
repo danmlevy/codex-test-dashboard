@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Shell</title>
+    <link rel="stylesheet" href="./dashboard.css" />
+  </head>
+  <body>
+    <main class="dashboard">
+      <header class="dashboard__header">
+        <div>
+          <h1>Dashboard</h1>
+          <p class="muted">
+            Assumption: No existing UI framework/components were found in this repo, so this is a minimal shell using native HTML/CSS/JS.
+          </p>
+        </div>
+        <button id="refreshBtn" class="btn">Refresh</button>
+      </header>
+
+      <section aria-labelledby="kpi-title">
+        <h2 id="kpi-title">Headline KPIs</h2>
+        <div class="kpi-grid" id="kpiGrid">
+          <article class="kpi-card">
+            <h3>Total Countries</h3>
+            <p class="kpi-value" id="kpiCountries">--</p>
+          </article>
+          <article class="kpi-card">
+            <h3>Total Population (2019)</h3>
+            <p class="kpi-value" id="kpiPopulation">--</p>
+          </article>
+          <article class="kpi-card">
+            <h3>Average GDP (2019)</h3>
+            <p class="kpi-value" id="kpiAvgGdp">--</p>
+          </article>
+          <article class="kpi-card">
+            <h3>Countries With GDP Growth</h3>
+            <p class="kpi-value" id="kpiGrowth">--</p>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="trend-title">
+        <h2 id="trend-title">Trends</h2>
+        <div class="trend-grid">
+          <article class="panel">
+            <h3>Top 10 GDP (2019)</h3>
+            <svg id="gdpChart" class="chart" viewBox="0 0 800 260" role="img" aria-label="Top GDP bar chart"></svg>
+            <p class="muted small">TODO: Swap this with repo-standard chart component if/when one exists.</p>
+          </article>
+          <article class="panel">
+            <h3>Population by Region (2019)</h3>
+            <svg id="regionChart" class="chart" viewBox="0 0 800 260" role="img" aria-label="Region population bar chart"></svg>
+            <p class="muted small">TODO: Replace with standard data-fetch + chart pattern from app shell.</p>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="breakdown-title">
+        <h2 id="breakdown-title">Breakdown Table</h2>
+        <div class="panel table-panel">
+          <label for="regionFilter" class="filter-label">Region filter</label>
+          <select id="regionFilter">
+            <option value="all">All regions</option>
+          </select>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Country</th>
+                  <th>Region</th>
+                  <th>Income Group</th>
+                  <th>GDP 2019</th>
+                  <th>Population 2019</th>
+                  <th>GDP Delta</th>
+                </tr>
+              </thead>
+              <tbody id="countryRows"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./dashboard.js" type="module"></script>
+  </body>
+</html>

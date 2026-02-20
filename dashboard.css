@@ -1,0 +1,153 @@
+:root {
+  --bg: #f4f5f7;
+  --panel: #ffffff;
+  --text: #1b2430;
+  --muted: #59667a;
+  --border: #dde3ea;
+  --brand: #1d5eff;
+  --brand-soft: #dce7ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top right, #e8eefc 0%, var(--bg) 42%);
+}
+
+.dashboard {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+.dashboard__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+h1 {
+  margin: 0 0 8px;
+}
+
+h2 {
+  margin: 26px 0 12px;
+}
+
+h3 {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.muted {
+  color: var(--muted);
+  margin: 0;
+}
+
+.small {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.btn {
+  border: 1px solid var(--brand);
+  background: var(--brand);
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.kpi-card,
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.kpi-value {
+  margin: 12px 0 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.trend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 12px;
+}
+
+.chart {
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(to top, #f7faff 0%, #ffffff 65%);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.filter-label {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+select {
+  margin: 8px 0 12px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  padding: 10px 8px;
+  font-size: 14px;
+}
+
+th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.bar {
+  fill: var(--brand);
+}
+
+.bar-soft {
+  fill: var(--brand-soft);
+}
+
+.label {
+  fill: #3a4a61;
+  font-size: 10px;
+}
+
+@media (max-width: 640px) {
+  .dashboard__header {
+    flex-direction: column;
+  }
+}
